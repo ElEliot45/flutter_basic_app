@@ -7,7 +7,6 @@ class PromotionService {
 
   CollectionReference get _col => _db.collection('promotions');
 
-  // ── Stream en tiempo real de todas las promociones ─────────────────────
   Stream<List<Promotion>> getPromotions() {
     return _col
         .orderBy('createdAt', descending: true)
@@ -15,7 +14,6 @@ class PromotionService {
         .map((snap) => snap.docs.map(Promotion.fromFirestore).toList());
   }
 
-  // ── Crear promoción (imageUrl es una URL de internet, opcional) ────────
   Future<void> createPromotion({
     required String title,
     required String description,
@@ -35,12 +33,10 @@ class PromotionService {
     await _col.add(promo.toFirestore());
   }
 
-  // ── Actualizar estatus activo/inactivo ─────────────────────────────────
   Future<void> toggleStatus(String id, bool isActive) async {
     await _col.doc(id).update({'isActive': isActive});
   }
 
-  // ── Simular envío de promoción ─────────────────────────────────────────
   Future<void> sendPromotion(String id) async {
     await _col.doc(id).update({
       'isSent': true,
@@ -48,7 +44,6 @@ class PromotionService {
     });
   }
 
-  // ── Eliminar promoción ─────────────────────────────────────────────────
   Future<void> deletePromotion(String id) async {
     await _col.doc(id).delete();
   }

@@ -9,7 +9,6 @@ import 'services/authservice.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   
-  // Inicializa Firebase con la configuración automática de tu proyecto
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );

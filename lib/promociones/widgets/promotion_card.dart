@@ -1,4 +1,3 @@
-// lib/widgets/promotion_card.dart
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -30,7 +29,6 @@ class PromotionCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // ── Imagen ──────────────────────────────────────────────────────
           if (p.imageUrl != null)
             ClipRRect(
               borderRadius: const BorderRadius.vertical(top: Radius.circular(16)),
@@ -53,11 +51,9 @@ class PromotionCard extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // ── Badges de estado ───────────────────────────────────────
                 Row(children: [
                   _StatusBadge(isActive: p.isActive, isSent: p.isSent),
                   const Spacer(),
-                  // Fecha
                   Container(
                     padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                     decoration: BoxDecoration(
@@ -73,7 +69,6 @@ class PromotionCard extends StatelessWidget {
                 ]),
                 const SizedBox(height: 12),
 
-                // ── Título ─────────────────────────────────────────────────
                 Text(
                   p.title,
                   style: const TextStyle(
@@ -85,7 +80,6 @@ class PromotionCard extends StatelessWidget {
                 ),
                 const SizedBox(height: 8),
 
-                // ── Descripción ────────────────────────────────────────────
                 Text(
                   p.description,
                   style: const TextStyle(color: AppTheme.textMuted, fontSize: 14, height: 1.5),
@@ -93,7 +87,6 @@ class PromotionCard extends StatelessWidget {
                   overflow: TextOverflow.ellipsis,
                 ),
 
-                // ── Sent at ────────────────────────────────────────────────
                 if (p.isSent && p.sentAt != null) ...[
                   const SizedBox(height: 10),
                   Container(
@@ -115,7 +108,6 @@ class PromotionCard extends StatelessWidget {
                 ],
                 const SizedBox(height: 14),
 
-                // ── Acciones ───────────────────────────────────────────────
                 _ActionRow(
                   promotion: p,
                   onSend: onSend,
@@ -131,7 +123,6 @@ class PromotionCard extends StatelessWidget {
   }
 }
 
-// ── Badge de estado ────────────────────────────────────────────────────────────
 class _StatusBadge extends StatelessWidget {
   final bool isActive;
   final bool isSent;
@@ -174,7 +165,6 @@ class _StatusBadge extends StatelessWidget {
   }
 }
 
-// ── Fila de acciones ───────────────────────────────────────────────────────────
 class _ActionRow extends StatefulWidget {
   final Promotion promotion;
   final VoidCallback onSend;
