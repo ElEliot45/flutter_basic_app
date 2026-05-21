@@ -1,4 +1,3 @@
-// lib/screens/create_promotion_screen.dart
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import '../../services/promotion_service.dart';
@@ -15,7 +14,7 @@ class _CreatePromotionScreenState extends State<CreatePromotionScreen> {
   final _formKey = GlobalKey<FormState>();
   final _titleCtrl = TextEditingController();
   final _descCtrl = TextEditingController();
-  final _imageUrlCtrl = TextEditingController(); // URL de imagen externa
+  final _imageUrlCtrl = TextEditingController();
   final _promoService = PromotionService();
 
   DateTime _selectedDate = DateTime.now().add(const Duration(days: 1));
