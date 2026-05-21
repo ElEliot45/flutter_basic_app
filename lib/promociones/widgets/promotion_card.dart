@@ -92,9 +92,9 @@ class PromotionCard extends StatelessWidget {
                   Container(
                     padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
                     decoration: BoxDecoration(
-                      color: AppTheme.success.withOpacity(0.1),
+                      color: AppTheme.success.withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(8),
-                      border: Border.all(color: AppTheme.success.withOpacity(0.3)),
+                      border: Border.all(color: AppTheme.success.withValues(alpha: 0.3)),
                     ),
                     child: Row(children: [
                       const Icon(Icons.check_circle, size: 14, color: AppTheme.success),
@@ -152,9 +152,9 @@ class _StatusBadge extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
       decoration: BoxDecoration(
-        color: color.withOpacity(0.15),
+        color: color.withValues(alpha: 0.15),
         borderRadius: BorderRadius.circular(20),
-        border: Border.all(color: color.withOpacity(0.4), width: 1),
+        border: Border.all(color: color.withValues(alpha: 0.4), width: 1),
       ),
       child: Row(mainAxisSize: MainAxisSize.min, children: [
         Icon(icon, size: 10, color: color),
@@ -214,7 +214,7 @@ class _ActionRowState extends State<_ActionRow> {
                   ? const SizedBox(width: 14, height: 14, child: CircularProgressIndicator(strokeWidth: 2, color: Colors.white))
                   : const Icon(Icons.send_rounded, size: 16),
               label: Text(_sending ? 'Enviando...' : 'Enviar', style: const TextStyle(fontSize: 13)),
-            ).animate(target: _sending ? 1 : 0).shimmer(color: AppTheme.accent.withOpacity(0.3)),
+            ).animate(target: _sending ? 1 : 0).shimmer(color: AppTheme.accent.withValues(alpha: 0.3)),
           ),
         ),
       if (!p.isSent) const SizedBox(width: 8),

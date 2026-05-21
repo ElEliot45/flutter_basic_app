@@ -92,14 +92,13 @@ class _LoginScreenState extends State<LoginScreen> {
               padding: const EdgeInsets.symmetric(horizontal: 28, vertical: 40),
               child: Column(
                 children: [
-                  // ── Logo / Header ───────────────────────────────────────
                   Container(
                     width: 72,
                     height: 72,
                     decoration: BoxDecoration(
-                      color: AppTheme.accent.withOpacity(0.15),
+                      color: AppTheme.accent.withValues(alpha: 0.15),
                       borderRadius: BorderRadius.circular(20),
-                      border: Border.all(color: AppTheme.accent.withOpacity(0.4), width: 1.5),
+                      border: Border.all(color: AppTheme.accent.withValues(alpha: 0.4), width: 1.5),
                     ),
                     child: const Icon(Icons.local_offer_rounded, color: AppTheme.accent, size: 36),
                   ).animate().fadeIn(duration: 600.ms).scale(begin: const Offset(0.8, 0.8)),
@@ -180,7 +179,6 @@ class _LoginScreenState extends State<LoginScreen> {
                         ).animate().fadeIn(delay: 600.ms),
                         const SizedBox(height: 20),
 
-                        // Toggle login / registro
                         TextButton(
                           onPressed: () => setState(() => _isLogin = !_isLogin),
                           child: RichText(
